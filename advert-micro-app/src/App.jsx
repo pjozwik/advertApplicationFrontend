@@ -23,7 +23,7 @@ useEffect(() => {
 }, []);
 
 const deleteAdvert = async (id) => {
-  const response = await api.delete("/api/adverts/"+id);
+  await api.delete("/api/adverts/"+id);
   getAdverts();
 }
 
