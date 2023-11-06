@@ -1,5 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: #8ad7ec;
+  flex-wrap: wrap;
 }
 
 .App-logo {
@@ -35,4 +47,25 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: auto;
+  padding: 0px 20px;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E6EFF4;
+}
+
+.adverts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
