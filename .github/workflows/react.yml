@@ -26,7 +26,6 @@ jobs:
       with:
         working-directory: ./advert-micro-app
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
     - run: npm ci
       working-directory: ./advert-micro-app
     - run: npm test
