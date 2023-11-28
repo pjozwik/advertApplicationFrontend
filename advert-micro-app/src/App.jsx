@@ -2,10 +2,15 @@ import './App.css';
 import api from './api/axiosConfig';
 import { useState, useEffect } from 'react';
 import Advert from './components/Advert/Advert';
+import TopBar from './components/TopBar/TopBar';
+import SideBar from './components/SideBar/SideBar';
+import AddAdvertForm from './components/AdvertForm/AddAdvertForm';
 
 function App() {
 
 const [adverts, setAdverts] = useState([]);
+const [toggleForm, setToggleForm] = useState(false);
+
 var i = 8;
 
 const getAdverts = async () => {
@@ -29,7 +34,10 @@ const deleteAdvert = async (id) => {
 
   return (
     <div>
+    <TopBar />
+    <SideBar />
     <section>
+      <button className='add_adverts_button' onClick={() => setToggleForm(true)}> + Add advert</button>
       <div className="container">
         <div className='adverts'>
           {adverts?.map(advert => {
@@ -39,6 +47,7 @@ const deleteAdvert = async (id) => {
         </div>
       </div>
     </section>
+    <AddAdvertForm toggleForm={toggleForm} setToggleForm={setToggleForm} getAdverts={getAdverts}/>
     </div>
   );
 }

@@ -1,0 +1,51 @@
+.create {
+    padding-top: 100px;
+    width: 500px;
+    text-align: center;
+    padding-left: 150px;
+}
+
+.create label {
+    text-align: left;
+    display: block;
+    margin-top: 10px;
+}
+
+.create input, 
+.create textarea {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 5px 10px 0 0;
+    border: 1px solid rgb(27, 36, 48);
+    box-sizing: border-box;
+    display: block;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.create textarea {
+    height: 300px;
+    max-height: 350px;
+}
+
+.create form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    padding-top: 130px;
+}
+
+.cancel_button {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+}
+
+.add_button {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+}
+
+
