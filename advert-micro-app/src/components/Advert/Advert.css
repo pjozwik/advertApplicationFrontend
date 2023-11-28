@@ -18,6 +18,11 @@
     margin-bottom: 20px;
     height: fit-content;
     text-align: center;
+    cursor: pointer;
+}
+
+.advert-container:hover {
+    box-shadow: 10px 10px 8px #1b2430;
 }
 
 .advert-title,
@@ -45,16 +50,19 @@
 }
 
 .advert-btn-edit {
-    width: 84%;
+    align-self: flex-end;
     margin: 0.5rem 5%;
+    cursor: pointer;
 }
 
 .advert-btn-delete {
-    position: absolute;
-    right: 20px;
-    width: 84%;
+    align-self: flex-end;
     margin: 0.5rem 5%;
-    padding-top: 25px;
+    cursor: pointer;
+}
+
+.advert-btn-delete:hover {
+    color: rgb(240, 9, 9);
 }
 
 .advert-image {

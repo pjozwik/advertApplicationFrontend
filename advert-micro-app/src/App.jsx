@@ -42,7 +42,7 @@ const deleteAdvert = async (id) => {
         <div className='adverts'>
           {adverts?.map(advert => {
             var imageSource = 'https://i.pravatar.cc/100?img=' + i++;
-            return <Advert advert={advert} imageSource={imageSource} deleteAdvert={deleteAdvert}/>
+            return <Advert advert={advert} imageSource={imageSource} deleteAdvert={deleteAdvert} getAdverts={getAdverts}/>
           })}
         </div>
       </div>
