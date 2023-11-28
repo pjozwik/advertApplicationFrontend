@@ -50,7 +50,7 @@
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1150px;
   width: 100%;
   margin: auto;
   padding: 0px 20px;
@@ -62,10 +62,26 @@ section {
   flex-direction: column;
   align-items: center;
   background-color: #E6EFF4;
+  padding-left: 150px;
 }
 
 .adverts {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+}
+
+.add_adverts_button {
+  position: absolute;
+  left: 180px;
+  margin-top: 25px;
+  background-color: #27817C;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: none;
+  border-radius: 1rem;
 }

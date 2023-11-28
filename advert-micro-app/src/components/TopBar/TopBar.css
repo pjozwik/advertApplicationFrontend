@@ -1,0 +1,8 @@
+.TopBar {
+    display: flex;
+    height: 10vh;
+    background: #0858c0;
+    margin-left: 150px;
+    border: white;
+    padding-left: 150px;
+  }

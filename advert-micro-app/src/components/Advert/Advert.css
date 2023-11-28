@@ -44,10 +44,17 @@
         font-size: 1rem;
 }
 
-.advert-btn {
-    text-align: center;
-    width: 90%;
+.advert-btn-edit {
+    width: 84%;
     margin: 0.5rem 5%;
+}
+
+.advert-btn-delete {
+    position: absolute;
+    right: 20px;
+    width: 84%;
+    margin: 0.5rem 5%;
+    padding-top: 25px;
 }
 
 .advert-image {

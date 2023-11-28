@@ -1,5 +1,7 @@
 import React from 'react'
 import './Advert.css'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 function Advert( {advert, imageSource, deleteAdvert} ) {
 
@@ -9,8 +11,8 @@ function Advert( {advert, imageSource, deleteAdvert} ) {
         <p className='advert-user'>pjoz</p>
         <h1 className='advert-title'>{advert.title}</h1>
         <span className='advert-price'>{advert.price}</span>
-        <button onClick={() => deleteAdvert(advert.id)} className='advert-btn'>Delete</button>
-
+        <FontAwesomeIcon icon={faPenToSquare} className='advert-btn-edit'/>
+        <FontAwesomeIcon icon={faTrash} onClick={() => deleteAdvert(advert.id)}/>
     </div>
   )
 }
