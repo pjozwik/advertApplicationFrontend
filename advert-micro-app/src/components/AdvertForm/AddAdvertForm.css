@@ -8,24 +8,58 @@
 .create label {
     text-align: left;
     display: block;
-    margin-top: 10px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.create h1 {
+    padding: 30px;
+    font-size: 60px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #2d2781, #27817C);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    
 }
 
 .create input, 
 .create textarea {
     width: 100%;
     padding: 6px 10px;
-    margin: 5px 10px 0 0;
+    margin: 15px 10px 0 0;
     border: 1px solid rgb(27, 36, 48);
     box-sizing: border-box;
     display: block;
+    font-size: 15px;
     max-width: 100%;
     min-width: 100%;
+    border: none;
+    border-radius: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background:
+    linear-gradient(90deg, #2d2781, #27817C) center bottom/0 0.15em no-repeat,
+    linear-gradient(90deg, #ccc, #ccc) left bottom/100% 0.15em no-repeat,
+    linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
+    transition: background-size 0.3s ease;
+    outline: none;
+}
+
+.create input.dirty,
+.create input:not(:placeholder-shown),
+.create input:focus,
+.create textarea.dirty,
+.create textarea:not(:placeholder-shown),
+.create textarea:focus 
+{
+  background-size: 100% 0.15em, 100% 0.1em, 100%;
 }
 
 .create textarea {
-    height: 300px;
-    max-height: 350px;
+    height: 250px;
+    max-height: 250px;
+    min-height: 100px;
 }
 
 .create form {
@@ -33,19 +67,46 @@
     flex-direction: column;
     justify-content: center;
     margin: 20px;
-    padding-top: 130px;
-}
-
-.cancel_button {
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
 }
 
 .add_button {
     position: absolute;
     bottom: 30px;
+    left:20px;
+    padding: 10px 20px;
+    width: fit-content;
+    background-color: #27817C;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.add_button:hover {
+    opacity: 0.7;
+}
+
+.cancel_button {
+    position: absolute;
+    bottom: 30px;
     right: 20px;
+    padding: 10px 20px;
+    width: fit-content;
+    background-color: #e02323;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.cancel_button:hover {
+    opacity: 0.7;
 }
 
 
