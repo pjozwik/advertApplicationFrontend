@@ -40,7 +40,7 @@ const deleteAdvert = async (id) => {
       <button className='add_adverts_button' onClick={() => setToggleForm(true)}> + Add advert</button>
       <div className="container">
         <div className='adverts'>
-          {adverts?.map(advert => {
+          {adverts.length > 0 && adverts?.map(advert => {
             var imageSource = 'https://i.pravatar.cc/100?img=' + i++;
             return <Advert advert={advert} imageSource={imageSource} deleteAdvert={deleteAdvert} getAdverts={getAdverts}/>
           })}

@@ -1,0 +1,67 @@
+.display-advert {
+    padding-top: 100px;
+    width: 500px;
+    text-align: left;
+    padding-left: 100px;
+}
+ 
+.display-advert textarea, 
+.display-advert label {
+    padding: 0px 20px 0px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.display-advert h1 {
+    padding: 20px 20px 0px 20px;
+}
+
+.advert-details {
+    padding: 20px 20px 0px 20px;
+}
+
+.contact-detail {
+    padding: 5px 20px 0px 20px;
+}
+
+.display-advert div-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px; 
+}
+
+.display-advert  textarea {
+    max-height: 550px;
+    min-height: 550px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    outline: none;
+    border: none;
+    font-size: 15px;
+}
+
+.footer {
+    background-color: rgb(220, 220, 220);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+}
+
+.close-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    padding: 10px 20px;
+    width: fit-content;
+    background-color: #e02323;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+}

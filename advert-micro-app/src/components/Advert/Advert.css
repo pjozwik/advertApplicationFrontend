@@ -55,6 +55,10 @@
     cursor: pointer;
 }
 
+.advert-btn-edit:hover {
+    color: rgb(39, 130, 125);
+}
+
 .advert-btn-delete {
     align-self: flex-end;
     margin: 0.5rem 5%;
