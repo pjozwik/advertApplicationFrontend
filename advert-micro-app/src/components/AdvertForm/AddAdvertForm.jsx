@@ -15,9 +15,8 @@ function AddAdvertForm ( {toggleForm, setToggleForm, getAdverts, advert, isEdit}
         }
     });
 
-    const handleSubmit1 = async (e) => {
-       const values = getValues();
-
+    const onSubmit = async (e) => {
+        const values = getValues();
         const advertToSave = {
             userId: '1',
             ...values
@@ -42,22 +41,25 @@ function AddAdvertForm ( {toggleForm, setToggleForm, getAdverts, advert, isEdit}
         }
         getAdverts();
         setToggleForm(false);
+        
     }
 
-    const handleCancel = () => {
+    const handleCancel = (e) => {
         if(!isEdit) reset();
         setToggleForm(false);
+        e.stopPropagation();
     }
 
     return (
         <Drawer anchor="right" 
             open={toggleForm} 
-            onClose={() => handleCancel()} 
+            onClose={(e) => handleCancel(e)} 
+            onClick={(e) => e.stopPropagation()}
             className='create' 
-            PaperProps={{sx: { width: "35%" }, justifyContent: "center"}}>
+            PaperProps={{sx: { width: "35%" }}}>
             { !isEdit && <h1>Add advert</h1>}
             { isEdit && <h1>Edit advert</h1>} 
-            {<form onSubmit={handleSubmit(handleSubmit1)}>
+            {<form onSubmit={handleSubmit(onSubmit)}>
                 <label>Title</label>
                 <input
                     required 
@@ -83,7 +85,7 @@ function AddAdvertForm ( {toggleForm, setToggleForm, getAdverts, advert, isEdit}
                 </textarea>
                 <button className='add_button'>Save</button>
             </form>}
-            <button className='cancel_button' onClick={() => handleCancel()}>Cancel</button>
+            <button className='cancel_button' onClick={(e) => handleCancel(e)}>Cancel</button>
         </Drawer>
     )
 }
