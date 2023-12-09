@@ -1,7 +1,7 @@
 import React from 'react'
 import { Drawer } from "@mui/material"
 import './AddAdvertForm.css'
-import api from '../../api/axiosConfig';
+import request from '../../api/axiosConfig';
 import {useForm} from 'react-hook-form'
 
 function AddAdvertForm ( {toggleForm, setToggleForm, getAdverts, advert, isEdit}) {
@@ -23,21 +23,21 @@ function AddAdvertForm ( {toggleForm, setToggleForm, getAdverts, advert, isEdit}
         }
 
         if(isEdit){
-            await api.put("/api/adverts/" + advert.id, advertToSave)
-                .then(function (response) {
-                    console.log(response);
+            await request("/api/adverts/", advert.id, "PUT")
+            .then(function (response) {
+                  console.log(response);
                 })
                 .catch(function (error) {
-                    console.log(error);
-                })
+                  console.log(error);
+                });
         } else {
-            await api.post("/api/adverts", advertToSave)
-                .then(function (response) {
-                    console.log(response);
+            await request("/api/adverts", advertToSave, "POST")
+            .then(function (response) {
+                  console.log(response);
                 })
                 .catch(function (error) {
-                    console.log(error);
-                })
+                  console.log(error);
+                });
         }
         getAdverts();
         setToggleForm(false);

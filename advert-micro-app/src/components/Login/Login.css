@@ -1,0 +1,92 @@
+body {
+    background: #1b2430;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 50px;
+    padding: 30px 30px 30px 30px;
+    width: fit-content;
+    border: solid rgb(230, 239, 244);
+    border-width: 1px;
+    border-radius: 20px;
+}
+
+.login-inputs {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.login-input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 480px;
+    height: 60px;
+    background: #eaeaea;
+    border-radius: 6px;
+    padding-left: 30px;
+}
+
+.login-header h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+}
+
+.userIcon,
+.emailIcon,
+.lockIcon {
+    color: rgb(142, 148, 148);
+}
+
+.login-input input{
+    margin-left: 30px;
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 19px;
+}
+
+.login-btn,
+.signUp-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    margin: 50px 30px 0px 30px;
+    background-color: #17CF97;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 19px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.gray {
+    background: #eaeaea;
+    color: #676767;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
