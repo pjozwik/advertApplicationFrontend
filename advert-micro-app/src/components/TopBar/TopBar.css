@@ -1,10 +1,77 @@
 .TopBar {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     height: 10vh;
     background: #1b2430;
     margin-left: 200px;
     padding-left: 150px;
     border: solid rgb(230, 239, 244);
     border-width: 0 0 0 1px;
-    
+  }
+
+  .signIn-btn
+  {
+    align-items: center;
+    justify-self: flex-end;
+    margin-right: 30px;
+    margin-left: 32px;
+    border: none;
+    outline: none;
+    background: none;
+    color: aliceblue;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .register-btn
+  {
+    align-items: center;
+    justify-self: flex-end;
+    margin-right: 30px;
+    border: none;
+    outline: none;
+    background: none;
+    color: aliceblue;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .search-btn {
+    padding-right: 10px;
+    color: #1b2430;
+  }
+
+  .TopBar input {
+    margin-left: 8px;
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #0e0c0c;
+    font-size: 15px;
+    padding-right: 20px;
+  }
+
+  .TopBar button:hover {
+    color: #17CF97;
+    text-decoration: underline;
+    transition: 0.3s ease-in-out;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:auto;
+    width: 600px;
+    height: 30px;
+    background: white;
+    border-radius: 6px;
+    padding-left: 10px;
   }
