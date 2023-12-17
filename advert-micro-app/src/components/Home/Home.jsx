@@ -1,27 +1,30 @@
 import './Home.css';
-import api from '../../api/axiosConfig';
-import { getAuthToken } from '../../api/axiosConfig';
+import { request } from '../../api/axiosConfig';
 import { useState, useEffect } from 'react';
 import TopBar from '../TopBar/TopBar';
 import SideBar from '../SideBar/SideBar';
 import Advert from '../Advert/Advert';
 import AddAdvertForm from '../AdvertForm/AddAdvertForm';
+import { useAuth } from '../Contexts/AuthContext';
 
 function Home() {
 
     const [adverts, setAdverts] = useState([]);
     const [toggleForm, setToggleForm] = useState(false);
+    const { isLoggedIn } = useAuth();
 
     var i = 8;
 
     const getAdverts = async () => {
-        try {      
-            const response = await api.get("/api/adverts");
-            setAdverts(response.data);
-            console.log(response.data);
-        } catch (err) {
-            console.log(err);
-        }
+        await request("/api/adverts/all", '', "GET")
+            .then(function (response) {
+                let adverts = response.data;
+                setAdverts(adverts);
+                console.log(adverts);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     useEffect(() => {
@@ -29,20 +32,22 @@ function Home() {
     }, []);
 
     const deleteAdvert = async (id) => {
-        await api.delete("/api/adverts/" + id);
-        getAdverts();
-    }
-
-    const hasToken = () => {
-        return (getAuthToken() !== null && getAuthToken() !== 'undefined') ? true : false;
+        await request("/api/adverts/" + id, '', "DELETE")
+            .then(function (response) {
+                console.log(response.data);
+                getAdverts();
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     return (
         <div>
-            <TopBar />
+            <TopBar adverts={adverts} setAdverts={setAdverts} getAdverts={getAdverts}/>
             <SideBar />
             <section>
-                {hasToken() && <button className='add_adverts_button' onClick={() => setToggleForm(true)}> + Add advert</button>}
+                {isLoggedIn && <button className='add_adverts_button' onClick={() => setToggleForm(true)}> + Add advert</button>}
                 <div className="container">
                     <div className='adverts'>
                         {adverts.length > 0 && adverts?.map(advert => {

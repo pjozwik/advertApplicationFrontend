@@ -1,18 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Login.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 import logo from '../Assets/logo.svg'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { setAuthToken, request, setRole } from '../../api/axiosConfig';
+import { useAuth } from '../Contexts/AuthContext';
 
 function Login() {
 
-  const [action, setAction] = useState("Login");
+  const location = useLocation();
+  const [action, setAction] = useState(location.state?.action !== null ? location.state.action : "Login");
   const navigate = useNavigate();
   const [userName, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const { login, getCustomerFromToken } = useAuth();
+
+  useEffect(() => {
+    localStorage.clear();
+  })
 
   const handleLogin = async () => {
     setAction("Login");
@@ -21,16 +28,19 @@ function Login() {
       password
     }
 
-    await request("/api/authenticate", user, "POST")
-      .then(function (response) {
-        setAuthToken(response.data.token);
-        setRole(response.data.role)
-        navigate("/", { token: response.data });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
+    if (userName !== '' && password !== '') {
+      await request("/api/authenticate", user, "POST")
+        .then(function (response) {
+          setAuthToken(response.data.token);
+          setRole(response.data.role);
+          login(response.data.token);
+          getCustomerFromToken();
+          navigate("/");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   }
 
   return (
