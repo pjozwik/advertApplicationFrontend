@@ -39,8 +39,11 @@ function Advert({ advert, imageSource, deleteAdvert, getAdverts }) {
       <p className='advert-user'>{advert.userName}</p>
       <h1 className='advert-title'>{advert.title}</h1>
       <span className='advert-price'>{advert.price}</span>
-      {isLoggedIn && ifEditable() && <FontAwesomeIcon icon={faPenToSquare} onClick={(event) => { handleEditOnClick(event) }} className='advert-btn-edit' />}
-      {isLoggedIn && ifEditable() && <FontAwesomeIcon icon={faTrash} onClick={(e) => handleDeleteAdvert(e)} className='advert-btn-delete' />}
+      {!ifEditable() && <br></br>}
+      {isLoggedIn && ifEditable() && <div className='div-buttons'>
+        <FontAwesomeIcon icon={faPenToSquare} onClick={(event) => { handleEditOnClick(event) }} className='advert-btn-edit' />
+        <FontAwesomeIcon icon={faTrash} onClick={(e) => handleDeleteAdvert(e)} className='advert-btn-delete' />
+      </div>}
       <AddAdvertForm toggleForm={toggleForm} setToggleForm={setToggleForm} advert={advert} isEdit={true} getAdverts={getAdverts} />
       <AdvertDetailsDrawer displayAdvertDrawer={displayAdvertDrawer} setDisplayAdvertDrawer={setDisplayAdvertDrawer} advert={advert} />
     </div>

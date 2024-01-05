@@ -8,10 +8,8 @@ function App() {
   return (
       <BrowserRouter>
         <Routes>
-          <Route path="/" Component={Home}>
-          </Route>
-          <Route path="/login" Component={Login}>
-          </Route>
+          <Route path="/" Component={Home}></Route>
+          <Route path="/login" Component={Login}></Route>
         </Routes>
       </BrowserRouter>
   );

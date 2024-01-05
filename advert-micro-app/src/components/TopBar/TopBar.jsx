@@ -7,7 +7,7 @@ import { request } from '../../api/axiosConfig';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
-function TopBar({ setAdverts }) {
+function TopBar({ setAdverts, setShowCustomerDetails, setShowHomePage }) {
 
     const navigate = useNavigate();
     const { isLoggedIn } = useAuth();
@@ -19,7 +19,7 @@ function TopBar({ setAdverts }) {
                 let adverts = response.data;
                 console.log(response.data);
                 if (value !== '') {
-                    let filteredAdverts = adverts.filter(advert => advert.title.toLowerCase().includes(value));
+                    let filteredAdverts = adverts.filter(advert => advert.title.toLowerCase().includes(value.toLowerCase()));
                     console.log(filteredAdverts);
                     setAdverts(filteredAdverts);
                 } else {
@@ -44,7 +44,7 @@ function TopBar({ setAdverts }) {
             </div>
             {!isLoggedIn && <button className="signIn-btn" onClick={() => navigate("/login", { state: { action: "Login" } })}>Login</button>}
             {!isLoggedIn && <button className="register-btn" onClick={() => navigate("/login", { state: { action: "Sign up" } })}>Sign up</button>}
-            {isLoggedIn && <Dropdown />}
+            {isLoggedIn && <Dropdown setShowCustomerDetails={setShowCustomerDetails} setShowHomePage={setShowHomePage}/>}
         </div>
     )
 }

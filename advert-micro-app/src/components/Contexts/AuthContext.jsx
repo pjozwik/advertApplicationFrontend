@@ -23,7 +23,9 @@ export const AuthProvider = ({ children }) => {
         .then(function (response) {
           setAuthCustomer({
             userId: response.data.id,
-            userName: response.data.username,
+            userName: response.data.userName,
+            name: response.data.name,
+            surname: response.data.surname,
             email: response.data.email,
             roles: token.roles
           })

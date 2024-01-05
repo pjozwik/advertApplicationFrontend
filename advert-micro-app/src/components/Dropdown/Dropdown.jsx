@@ -4,11 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Contexts/AuthContext';
+import ProfileDetails from '../ProfileDetails/ProfileDetails';
 
-export const Dropdown = () => {
+export const Dropdown = ( {setShowCustomerDetails, setShowHomePage} ) => {
 
     const { logOut, authCustomer } = useAuth();
     const [toggleDropdown, setToggleDropdownn] = useState(false);
+    const [showProfileDetails, setShowProfileDetails] = useState(false);
     const navigate = useNavigate();
 
     const handleOnClick = (e) => {
@@ -22,8 +24,18 @@ export const Dropdown = () => {
         e.stopPropagation();
         e.preventDefault();
         logOut();
-        navigate("/");
+        setShowCustomerDetails(false);
+        navigate("/")
+        setShowHomePage(true)
         localStorage.clear();
+    }
+
+    const handleProfileBtnClick = (e) => {
+        setShowProfileDetails(true);
+        setToggleDropdownn((prevState) => {
+            return !prevState;
+        });
+        e.stopPropagation();
     }
 
     return (
@@ -37,13 +49,14 @@ export const Dropdown = () => {
                 <FontAwesomeIcon icon={faCaretDown} className='dropdown-collapse-btn' />
             </div>
             <ul className={toggleDropdown ? 'dropdown-menu open' : 'dropdown-menu'}>
-                <li>
-                    <span className='dropdown-menu-item'>My profile</span>
+                <li onClick={(e) => handleProfileBtnClick(e)}>
+                    <span className='dropdown-menu-item' onClick={(e) => handleProfileBtnClick(e)}>My profile</span>
                 </li>
                 <li onClick={(e) => {handleLogOut(e)}}>
-                    <span className='dropdown-menu-item'>Log out</span>
+                    <span className='dropdown-menu-item' onClick={(e) => {handleLogOut(e)}}>Log out</span>
                 </li>
             </ul>
+            {showProfileDetails && <ProfileDetails showProfileDetails={showProfileDetails} setShowProfileDetails={setShowProfileDetails}/>}
         </div>
     )
 }

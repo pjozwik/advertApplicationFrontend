@@ -12,4 +12,34 @@
 
   .logo {
     margin: 10px;
+    margin-bottom: 26px;
+  }
+
+  .SideBar button {
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    border: none;
+    outline: none;
+    background: none;
+    color: aliceblue;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    width: 130px;
+    text-align: left;
+  }
+
+  .SideBar button:hover {
+    color: #17CF97;
+    transition: 0.3s ease-in-out;
+  }
+
+  .icons {
+    padding-right: 5px;
+  }
+
+  .admin-icon {
+    padding-right: 5px;
   }
