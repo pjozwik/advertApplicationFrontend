@@ -44,7 +44,6 @@ function AddAdvertForm({ toggleForm, setToggleForm, getAdverts, advert, isEdit }
         }
         getAdverts();
         setToggleForm(false);
-
     }
 
     const handleCancel = (e) => {

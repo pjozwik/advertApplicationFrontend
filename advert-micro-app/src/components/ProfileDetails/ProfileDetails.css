@@ -1,0 +1,15 @@
+.profile-image {
+    width: 150px;
+    clip-path: circle();
+}
+
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.image {
+    width: 100px;
+    max-width: calc(100% - 20px);
+    clip-path: circle();
+}

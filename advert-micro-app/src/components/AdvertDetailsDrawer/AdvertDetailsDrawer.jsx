@@ -17,7 +17,7 @@ function AdvertDetailsDrawer ( {displayAdvertDrawer, setDisplayAdvertDrawer, adv
             PaperProps={{sx: { width: "35%" }}}>
               <div className='div-wrapper'>
                 <h1>{advert !== undefined ? advert.title : ''}</h1>
-                <p className='advert-details'>Posted by: pjoz{advert !== undefined ? advert.user : ''}</p>
+                <p className='advert-details'>Posted by: {advert !== undefined ? advert.userName : ''}</p>
                 <p className='advert-details'>Price: {advert !== undefined ? advert.price : ''} $</p>
                 <textarea>{advert !== undefined ? advert.description : ''}</textarea>
                 <label>Contact details:</label>

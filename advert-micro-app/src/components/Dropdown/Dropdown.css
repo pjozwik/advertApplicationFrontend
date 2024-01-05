@@ -80,6 +80,7 @@
 .dropdown-menu.open {
     opacity: 1;
     visibility: visible;
+    z-index: 1;
 }
 
 .dropdown-menu li {

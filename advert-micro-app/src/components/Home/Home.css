@@ -12,8 +12,10 @@
   .container {
     max-width: 1150px;
     width: 100%;
-    margin: auto;
+    margin-top: 25px;
     padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
   }
   
   section {
@@ -22,7 +24,7 @@
     flex-direction: column;
     align-items: center;
     background-color: #E6EFF4;
-    padding-left: 150px;
+    padding-left: 200px;
   }
   
   .adverts {
@@ -33,8 +35,8 @@
   
   .add_adverts_button {
     position: absolute;
-    left: 230px;
-    margin-top: 25px;
+    left: 14rem;
+    margin-top: 30px;
     background-color: #17CF97;
     color: white;
     padding: 10px 20px;
@@ -50,3 +52,39 @@
   .add_adverts_button:hover {
     opacity: 0.7;
   } 
+
+  .sort-title-btn {
+    position: absolute;
+    right: 90px;
+    margin-top: 35px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 16px;
+  }
+
+  .sort-price-btn {
+    position: absolute;
+    right: 83px;
+    margin-top: 35px;
+    cursor: pointer;
+    top: 120px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 16px;
+  }
+
+  .sort-price-btn:hover,
+  .sort-title-btn:hover {
+    color: #17CF97;
+  }
+
+  .sort-title {
+    margin-right: 10px;
+  }
+
+  .sort-price {
+    margin-right: 9px;
+  }
